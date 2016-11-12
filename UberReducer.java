@@ -13,7 +13,7 @@ public class UberReducer
 
   int maxLength = Integer.MIN_VALUE;
   for (Text value : values) {
-  	maxLength = Math.max(maxLength,value.toString().length())
+  	maxLength = Math.max(maxLength,value.toString().length());
   }
  context.write(key, new IntWritable(maxLength));
  }
