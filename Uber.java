@@ -13,7 +13,7 @@ public class Uber{
    System.exit(-1);
   }
 
- Job job = new Job();
+ Job job = Job.getInstance();
  job.setJarByClass(Uber.class);
  job.setJobName("Uber");
 
@@ -24,7 +24,7 @@ public class Uber{
  job.setReducerClass(UberReducer.class);
 
  job.setOutputKeyClass(Text.class);
- job.setOutputValueClass(IntWritable.class);
+ job.setOutputValueClass(Text.class);
 
  System.exit(job.waitForCompletion(true) ? 0 : 1);
  }
