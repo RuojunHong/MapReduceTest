@@ -14,8 +14,8 @@ public class UberMapper
         throws IOException, InterruptedException{
   String[] str = value.toString().split(",");
   try{
-  	String lat = String.format("%.4g", Float.valueOf(str[1]));
-  	String lon = String.format("%.4g", Float.valueOf(str[2]));
+  	String lat = String.format("%.6g", Float.valueOf(str[1]));
+  	String lon = String.format("%.6g", Float.valueOf(str[2]));
   	context.write(new Text(lon+","+lat), new IntWritable(1));
   }
   catch (Exception e){
