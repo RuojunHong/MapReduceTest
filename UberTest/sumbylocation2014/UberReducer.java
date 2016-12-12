@@ -10,9 +10,16 @@ public class UberReducer
  @Override
  public void reduce(Text key, Iterable<IntWritable> values, Context context)
   throws IOException, InterruptedException {
- for (IntWritable value : values) {
- context.write(new Text("new google.maps.LatLng("+key+"),,"), value);
-}
+ 
+	int count = 0;
+	for (IntWritable value : values) {
+		count +=1;
+
+}	
+ 	if(count > 50){
+	context.write(new Text(key+","), new IntWritable(count));
+	}
+
 }
 }
 
