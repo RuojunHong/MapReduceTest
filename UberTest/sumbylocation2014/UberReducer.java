@@ -14,6 +14,6 @@ public class UberReducer
  for (IntWritable value : values) {
   count+=1;
   }
- context.write(key, new IntWritable(count));
+ context.write(new Text(key+","), new IntWritable(count));
 }
 }

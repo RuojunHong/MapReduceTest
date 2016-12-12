@@ -16,7 +16,7 @@ public class UberMapper
   try{
   	String lat = String.format("%.6g", Float.valueOf(str[1]));
   	String lon = String.format("%.6g", Float.valueOf(str[2]));
-  	context.write(new Text(lon+"\t"+lat), new IntWritable(1));
+  	context.write(new Text(lon+","+lat), new IntWritable(1));
   }
   catch (Exception e){
   }
