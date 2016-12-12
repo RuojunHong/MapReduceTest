@@ -10,10 +10,9 @@ public class UberReducer
  @Override
  public void reduce(Text key, Iterable<IntWritable> values, Context context)
   throws IOException, InterruptedException {
- int count = 0;
  for (IntWritable value : values) {
-  count+=1;
-  }
- context.write(new Text(key+","), new IntWritable(count));
+ context.write(new Text(key+","), value);
 }
 }
+}
+
